@@ -32,7 +32,7 @@ jobs:
           mvn sonar:sonar \
             -Dsonar.projectKey=springboot-app \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
       - name: Publish to Nexus (main only)
         if: github.ref == 'refs/heads/main'
